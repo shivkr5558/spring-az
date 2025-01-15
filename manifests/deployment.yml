@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shivkrspringaz 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shivkrspringaz
+  template:
+    metadata:
+      labels:
+        app: shivkrspringaz 
+    spec:
+      containers:
+        - name: shivkrspringaz 
+          image: myclusteraz.azurecr.io/shivkrspringaz
+          ports:
+          - containerPort: 80
